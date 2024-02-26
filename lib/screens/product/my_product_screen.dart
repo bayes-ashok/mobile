@@ -52,7 +52,7 @@ class _MyProductScreenState extends State<MyProductScreen> {
                 if (_authViewModel.myProduct != null && _authViewModel.myProduct!.isEmpty)
                   Center(child: Text("You can add your products here")),
                 if (_authViewModel.myProduct != null)
-                  ..._authViewModel.myProduct!.map((e) => ProductWidgetList(context, e))
+                  ..._authViewModel.myProduct!.map((e) => ProductWidgetList(context, e as ProductModel))
               ],
             ),
           ),
