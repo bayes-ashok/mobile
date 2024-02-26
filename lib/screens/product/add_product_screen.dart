@@ -51,7 +51,7 @@ class _AddProductScreenState extends State<AddProductScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.green, // Changed app bar color to green
-        title: Text("Add a Product"),
+        title: Text("Create Blog"),
       ),
       body: SafeArea(
         child: SingleChildScrollView(
@@ -66,7 +66,7 @@ class _AddProductScreenState extends State<AddProductScreen> {
                   controller: _productNameController,
                   keyboardType: TextInputType.text,
                   decoration: InputDecoration(
-                    labelText: "Product Name",
+                    labelText: "Blog Title",
                     border: OutlineInputBorder(borderRadius: BorderRadius.circular(20)),
                   ),
                 ),
@@ -76,9 +76,9 @@ class _AddProductScreenState extends State<AddProductScreen> {
                   keyboardType: TextInputType.multiline,
                   maxLines: 20, // Increased the height of the description box
                   decoration: InputDecoration(
-                    labelText: "Product Description",
+                    label: Text("Blog Description"),
+                    hintText: 'Write your Blog here....',
                     border: OutlineInputBorder(borderRadius: BorderRadius.circular(20)),
-                    prefix: Text("Product Description"), // Placeholder text at the first line
                   ),
                 ),
                 SizedBox(height: 20),
@@ -111,3 +111,8 @@ class _AddProductScreenState extends State<AddProductScreen> {
     );
   }
 }
+
+
+
+
+

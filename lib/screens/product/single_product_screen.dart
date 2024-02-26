@@ -99,7 +99,7 @@ class _SingleProductBodyState extends State<SingleProductBody> {
             : Scaffold(
           appBar: AppBar(
             backgroundColor: Colors.green,
-            title: Text("Product Details"),
+            title: Text("Blog"),
           ),
           backgroundColor: Color(0xFFf5f5f4),
           body: SingleChildScrollView(

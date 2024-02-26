@@ -96,7 +96,7 @@ class _EditProductBodyState extends State<EditProductBody> {
         return Scaffold(
           appBar: AppBar(
             backgroundColor: Colors.green, // Changed app bar color to green
-            title: Text("Edit a product"),
+            title: Text("Edit your blog"),
           ),
           body: SafeArea(
             child: SingleChildScrollView(
@@ -114,8 +114,8 @@ class _EditProductBodyState extends State<EditProductBody> {
                         enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(20)),
                         focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(20)),
                         border: InputBorder.none,
-                        label: Text("Product Name"),
-                        hintText: 'Enter product name',
+                        label: Text("Blog Title"),
+                        hintText: 'Enter Blog Title',
                       ),
                     ),
                     SizedBox(height: 10,),
@@ -127,8 +127,8 @@ class _EditProductBodyState extends State<EditProductBody> {
                         enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(20)),
                         focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(20)),
                         border: InputBorder.none,
-                        label: Text("Product Description"),
-                        hintText: 'Enter product description',
+                        label: Text("Blog Description"),
+                        hintText: 'Write your Blog here....',
                       ),
                     ),
                     SizedBox(height: 15,),
