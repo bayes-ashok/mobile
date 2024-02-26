@@ -1,4 +1,3 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -34,7 +33,7 @@ class _LoginScreenState extends State<LoginScreen> {
         NotificationService.display(
           title: "Welcome back",
           body:
-              "Hello ${_authViewModel.loggedInUser?.name},\n Hope you are having a wonderful day.",
+          "Hello ${_authViewModel.loggedInUser?.name},\n Hope you are having a wonderful day.",
         );
         Navigator.of(context).pushReplacementNamed('/dashboard');
       }).catchError((e) {
@@ -67,118 +66,127 @@ class _LoginScreenState extends State<LoginScreen> {
             child: Container(
               padding: EdgeInsets.all(20),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Image.asset(
-                    "assets/images/logo.png",
-                    height: 100,
-                    width: 100,
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  TextFormField(
-                    controller: _emailController,
-                    keyboardType: TextInputType.emailAddress,
-                    validator: ValidateLogin.emailValidate,
-                    style: const TextStyle(
-                        fontFamily: 'WorkSansSemiBold',
-                        fontSize: 16.0,
-                        color: Colors.black),
-                    decoration: InputDecoration(
-                      enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20)),
-                      focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20)),
-                      border: InputBorder.none,
-                      prefixIcon: Icon(
-                        Icons.email,
-                        color: Colors.black,
-                        size: 22.0,
-                      ),
-                      hintText: 'Email Address',
-                      hintStyle: TextStyle(
-                          fontFamily: 'WorkSansSemiBold', fontSize: 17.0),
+                  Text(
+                    'Adhyayan', // Displaying the app name in an emphasized way
+                    style: TextStyle(
+                      fontSize: 32,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.blue,
                     ),
                   ),
                   SizedBox(
-                    height: 10,
-                  ),
-                  TextFormField(
-                    controller: _passwordController,
-                    obscureText: _obscureTextPassword,
-                    validator: ValidateLogin.password,
-                    style: const TextStyle(
-                        fontFamily: 'WorkSansSemiBold',
-                        fontSize: 16.0,
-                        color: Colors.black),
-                    decoration: InputDecoration(
-                      enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20)),
-                      focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20)),
-                      prefixIcon: const Icon(
-                        Icons.lock,
-                        size: 22.0,
-                        color: Colors.black,
-                      ),
-                      hintText: 'Password',
-                      hintStyle: const TextStyle(
-                          fontFamily: 'WorkSansSemiBold', fontSize: 17.0),
-                      suffixIcon: GestureDetector(
-                        onTap: () {
-                          setState(() {
-                            _obscureTextPassword = !_obscureTextPassword;
-                          });
-                        },
-                        child: Icon(
-                          _obscureTextPassword
-                              ? Icons.visibility
-                              : Icons.visibility_off,
-                          size: 20.0,
-                          color: Colors.black,
-                        ),
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Align(
-                      alignment: Alignment.centerRight,
-                      child: InkWell(
-                        onTap: () {
-                          Navigator.of(context).pushNamed("/forget-password");
-                        },
-                        child: Text(
-                          "Forgot password?",
-                          style: TextStyle(color: Colors.grey.shade800),
-                        ),
-                      )),
-                  SizedBox(
-                    height: 10,
+                    height: 40,
                   ),
                   Container(
-                    width: double.infinity,
-                    child: ElevatedButton(
-                        style: ButtonStyle(
-                          shape:
-                              MaterialStateProperty.all<RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(20),
-                                      side: BorderSide(color: Colors.blue))),
-                          padding: MaterialStateProperty.all<EdgeInsets>(
-                              EdgeInsets.symmetric(vertical: 20)),
+                    padding: EdgeInsets.all(20),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(20),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.5),
+                          spreadRadius: 5,
+                          blurRadius: 7,
+                          offset: Offset(0, 3), // changes position of shadow
                         ),
-                        onPressed: () {
-                          login();
-                        },
-                        child: Text(
-                          "Log In",
-                          style: TextStyle(fontSize: 20),
-                        )),
+                      ],
+                    ),
+                    child: Column(
+                      children: [
+                        TextFormField(
+                          controller: _emailController,
+                          keyboardType: TextInputType.emailAddress,
+                          validator: ValidateLogin.emailValidate,
+                          style: TextStyle(
+                              fontFamily: 'WorkSansSemiBold',
+                              fontSize: 16.0,
+                              color: Colors.black),
+                          decoration: InputDecoration(
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(20),
+                              borderSide: BorderSide.none,
+                            ),
+                            prefixIcon: Icon(
+                              Icons.email,
+                              color: Colors.black,
+                              size: 22.0,
+                            ),
+                            hintText: 'Email Address',
+                            hintStyle: TextStyle(
+                                fontFamily: 'WorkSansSemiBold',
+                                fontSize: 17.0),
+                            contentPadding: EdgeInsets.only(bottom: 10),
+                          ),
+                        ),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        TextFormField(
+                          controller: _passwordController,
+                          obscureText: _obscureTextPassword,
+                          validator: ValidateLogin.password,
+                          style: TextStyle(
+                              fontFamily: 'WorkSansSemiBold',
+                              fontSize: 16.0,
+                              color: Colors.black),
+                          decoration: InputDecoration(
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(20),
+                              borderSide: BorderSide.none,
+                            ),
+                            prefixIcon: Icon(
+                              Icons.lock,
+                              size: 22.0,
+                              color: Colors.black,
+                            ),
+                            hintText: 'Password',
+                            hintStyle: TextStyle(
+                                fontFamily: 'WorkSansSemiBold',
+                                fontSize: 17.0),
+                            suffixIcon: GestureDetector(
+                              onTap: () {
+                                setState(() {
+                                  _obscureTextPassword =
+                                  !_obscureTextPassword;
+                                });
+                              },
+                              child: Icon(
+                                _obscureTextPassword
+                                    ? Icons.visibility
+                                    : Icons.visibility_off,
+                                size: 20.0,
+                                color: Colors.black,
+                              ),
+                            ),
+                            contentPadding: EdgeInsets.only(bottom: 10),
+                          ),
+                        ),
+                        SizedBox(
+                          height: 30,
+                        ),
+                        SizedBox(
+                          width: double.infinity,
+                          child: ElevatedButton(
+                            onPressed: login,
+                            style: ElevatedButton.styleFrom(
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                              padding: EdgeInsets.symmetric(vertical: 20),
+                            ),
+                            child: Text(
+                              "Log In",
+                              style: TextStyle(fontSize: 20),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                   SizedBox(
-                    height: 20,
+                    height: 30,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -188,13 +196,14 @@ class _LoginScreenState extends State<LoginScreen> {
                         style: TextStyle(color: Colors.grey.shade800),
                       ),
                       InkWell(
-                          onTap: () {
-                            Navigator.of(context).pushNamed("/register");
-                          },
-                          child: Text(
-                            "Sign up",
-                            style: TextStyle(color: Colors.blue),
-                          ))
+                        onTap: () {
+                          Navigator.of(context).pushNamed("/register");
+                        },
+                        child: Text(
+                          "Sign up",
+                          style: TextStyle(color: Colors.blue),
+                        ),
+                      ),
                     ],
                   ),
                 ],
