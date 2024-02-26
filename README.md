@@ -1,16 +1,7 @@
 # adhyayan
 
-A new Flutter project.
+This is a blog app where user can write,read, and delete the blog. 
 
-## Getting Started
+## Register Page
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![9a2764c4-4c1a-469f-8161-e45ec30bd089](https://github.com/bayes-ashok/mobile/assets/121223930/c077d367-63b4-478f-89ae-c4ac8059e998)
