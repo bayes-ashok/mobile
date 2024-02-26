@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "873681241550",
+    "firebase_url": "https://mobile-17c7a-default-rtdb.firebaseio.com",
+    "project_id": "mobile-17c7a",
+    "storage_bucket": "mobile-17c7a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:873681241550:android:0171c405caa377e520979f",
+        "android_client_info": {
+          "package_name": "com.example.adhyayan"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyARECyJhfxhRE1BdwwmG5DAuOJYH26fqwI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:873681241550:android:da315b94ef4febb420979f",
+        "android_client_info": {
+          "package_name": "com.example.ecommerce"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyARECyJhfxhRE1BdwwmG5DAuOJYH26fqwI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
