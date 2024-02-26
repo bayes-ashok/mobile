@@ -1,7 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:Adhyayan/screens/auth/forget_password_screen.dart';
 import 'package:Adhyayan/screens/auth/login_screen.dart';
 import 'package:Adhyayan/screens/auth/register_screen.dart';
 import 'package:Adhyayan/screens/dashboard/dashboard.dart';
@@ -69,8 +68,6 @@ class MyApp extends StatelessWidget {
               "/login": (BuildContext context) => LoginScreen(),
               "/splash": (BuildContext context) => SplashScreen(),
               "/register": (BuildContext context) => RegisterScreen(),
-              "/forget-password": (BuildContext context) =>
-                  ForgetPasswordScreen(),
               "/dashboard": (BuildContext context) => DashboardScreen(),
               "/add-product": (BuildContext context) => AddProductScreen(),
               "/edit-product": (BuildContext context) => EditProductScreen(),

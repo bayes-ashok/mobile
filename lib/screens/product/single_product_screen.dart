@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:Adhyayan/models/favorite_model.dart';
+import 'package:Adhyayan/models/collection_model.dart';
 import 'package:Adhyayan/viewmodels/auth_viewmodel.dart';
 import 'package:provider/provider.dart';
 import '../../viewmodels/global_ui_viewmodel.dart';

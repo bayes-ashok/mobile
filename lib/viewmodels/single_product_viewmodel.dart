@@ -1,12 +1,12 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:Adhyayan/models/product_model.dart';
+import 'package:Adhyayan/models/blog_model.dart';
 import 'package:Adhyayan/models/user_model.dart';
 import 'package:Adhyayan/repositories/auth_repositories.dart';
 import 'package:Adhyayan/services/firebase_service.dart';
 import 'package:Adhyayan/viewmodels/global_ui_viewmodel.dart';
-import '../repositories/product_repositories.dart';
+import 'package:Adhyayan/repositories/note_repositories.dart';
 
 class SingleProductViewModel with ChangeNotifier {
   ProductRepository _productRepository = ProductRepository();

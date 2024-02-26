@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:Adhyayan/models/product_model.dart';
-import 'package:Adhyayan/repositories/product_repositories.dart';
+import 'package:Adhyayan/models/blog_model.dart';
+import 'package:Adhyayan/repositories/note_repositories.dart';
 import 'package:provider/provider.dart';
 
 import '../../viewmodels/auth_viewmodel.dart';

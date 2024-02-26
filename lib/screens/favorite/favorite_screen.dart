@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:Adhyayan/viewmodels/auth_viewmodel.dart';
 import 'package:provider/provider.dart';
 
-import '../../models/favorite_model.dart';
-import '../../viewmodels/global_ui_viewmodel.dart';
+import 'package:Adhyayan/models/collection_model.dart';
+import 'package:Adhyayan/viewmodels/global_ui_viewmodel.dart';
 
 class FavoriteScreen extends StatefulWidget {
   const FavoriteScreen({Key? key}) : super(key: key);

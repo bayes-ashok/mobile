@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:Adhyayan/models/product_model.dart';
+import 'package:Adhyayan/models/blog_model.dart';
 import 'package:Adhyayan/viewmodels/product_viewmodel.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
