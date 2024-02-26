@@ -1,5 +1,5 @@
-import 'package:firebase_messaging/firebase_messaging.dart';
-import 'package:flutter/cupertino.dart';
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:Adhyayan/viewmodels/auth_viewmodel.dart';
 import 'package:provider/provider.dart';
@@ -13,52 +13,87 @@ class SplashScreen extends StatefulWidget {
   _SplashScreenState createState() => _SplashScreenState();
 }
 
-class _SplashScreenState extends State<SplashScreen> {
+class _SplashScreenState extends State<SplashScreen>
+    with SingleTickerProviderStateMixin {
+  late AnimationController _animationController;
   late AuthViewModel _authViewModel;
 
-  void checkLogin() async{
-    String? token = await FirebaseMessaging.instance.getToken();
+  @override
+  void initState() {
+    super.initState();
+    _animationController = AnimationController(
+      vsync: this,
+      duration: Duration(seconds: 2),
+    );
 
-    await Future.delayed(Duration(seconds: 2));
-    // check for user detail first
-    try{
+    _animationController.repeat(reverse: true);
+
+    // Wait for some time and then check login
+    Timer(Duration(seconds: 3), () {
+      checkLogin();
+    });
+  }
+
+  @override
+  void dispose() {
+    _animationController.dispose();
+    super.dispose();
+  }
+
+  void checkLogin() async {
+    String? token = ''; // Add logic to get Firebase Messaging token
+
+    try {
       await _authViewModel.checkLogin(token);
-      if(_authViewModel.user==null){
+      if (_authViewModel.user == null) {
         Navigator.of(context).pushReplacementNamed("/login");
-      }else{
+      } else {
         NotificationService.display(
           title: "Welcome back",
-          body: "Hello ${_authViewModel.loggedInUser?.name},\n We have been waiting for you.",
+          body:
+          "Hello ${_authViewModel.loggedInUser?.name},\n We have been waiting for you.",
         );
         Navigator.of(context).pushReplacementNamed("/dashboard");
       }
-    }catch(e){
+    } catch (e) {
       Navigator.of(context).pushReplacementNamed("/login");
     }
+  }
 
-  }
-  @override
-  void initState() {
-    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-      _authViewModel = Provider.of<AuthViewModel>(context, listen: false);
-    });
-    checkLogin();
-    super.initState();
-  }
   @override
   Widget build(BuildContext context) {
+    _authViewModel = Provider.of<AuthViewModel>(context, listen: false);
+
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Center(
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              Image.asset("assets/images/splash.gif"),
-              SizedBox(height: 100,),
-              Text("Adhyayan", style: TextStyle(
-                fontSize: 22
-              ),)
-            ],
-          ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            ScaleTransition(
+              scale: _animationController.drive(
+                CurveTween(curve: Curves.easeInOut),
+              ),
+              child: Container(
+                width: 200,
+                height: 200,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: Colors.blue,
+                ),
+                child: Center(
+                  child: Text(
+                    'Adhyayan',
+                    style: TextStyle(
+                      fontSize: 24,
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );
