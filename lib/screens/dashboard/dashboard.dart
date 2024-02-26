@@ -74,7 +74,9 @@ class _DashboardScreenState extends State<DashboardScreen> {
 
   void _logout() {
     _authViewModel.logout();
+    Navigator.pushReplacementNamed(context, '/login'); // Replace with your sign-in page route
   }
+
 
   @override
   Widget build(BuildContext context) {
